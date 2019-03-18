@@ -12,3 +12,6 @@
 /comments CommentR POST
 
 /profile ProfileR GET
+
+
+/recommendations RecommendationR GET

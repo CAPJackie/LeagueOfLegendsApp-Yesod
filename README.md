@@ -1,24 +1,24 @@
 ## Pasos Para crear BD
 
-1. Crear usuario rootLOL (definido en el archivo de configuracion settings.yml)
+1. Crear usuario rootlol (definido en el archivo de configuracion settings.yml)
 ```
-CREATE USER rootLOL WITH PASSWORD 'rootLOL';
+CREATE USER rootlol WITH PASSWORD 'rootlol';
 ```
-2. Crear base de datos rootLOL (definido en settings.yml)
+2. Crear base de datos rootlol (definido en settings.yml)
 ```
-CREATE DATABASE rootLOL;
+CREATE DATABASE rootlol;
 ```
 3. Crear base de datos de tests (definido en test-settings.yml)
 ```
-CREATE DATABASE rootLOL_test;
+CREATE DATABASE rootlol_test;
 ```
-4. Brindar permisos al usuario rootLOL en la base de datos.
+4. Brindar permisos al usuario rootlol en la base de datos.
 ```
-GRANT ALL PRIVILEGES ON DATABASE rootLOL TO rootLOL;
+GRANT ALL PRIVILEGES ON DATABASE rootlol TO rootlol;
 ```
-5. Brindar permisos al usuario rootLOL en la base de datos de tests.
+5. Brindar permisos al usuario rootlol en la base de datos de tests.
 ```
-GRANT ALL PRIVILEGES ON DATABASE rootLOL_test TO rootLOL;
+GRANT ALL PRIVILEGES ON DATABASE rootlol_test TO rootlol;
 ```
 
 

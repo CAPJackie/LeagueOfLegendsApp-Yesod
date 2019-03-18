@@ -1,0 +1,6 @@
+$doctype 5
+<html>
+    <head>
+        <title>LoL Recommendations
+    <body>
+        <h1 .page-title>#{recommendationsTitle}
