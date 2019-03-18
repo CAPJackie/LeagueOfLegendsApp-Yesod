@@ -1,12 +1,28 @@
-## Database Setup
+## Pasos Para crear BD
 
-After installing Postgres, run:
+1. Crear usuario rootLOL (definido en el archivo de configuracion settings.yml)
+```
+CREATE USER rootLOL WITH PASSWORD 'rootLOL';
+```
+2. Crear base de datos rootLOL (definido en settings.yml)
+```
+CREATE DATABASE rootLOL;
+```
+3. Crear base de datos de tests (definido en test-settings.yml)
+```
+CREATE DATABASE rootLOL_test;
+```
+4. Brindar permisos al usuario rootLOL en la base de datos.
+```
+GRANT ALL PRIVILEGES ON DATABASE rootLOL TO rootLOL;
+```
+5. Brindar permisos al usuario rootLOL en la base de datos de tests.
+```
+GRANT ALL PRIVILEGES ON DATABASE rootLOL_test TO rootLOL;
+```
 
-```
-createuser LeagueOfLegendsPfis --password LeagueOfLegendsPfis --superuser
-createdb LeagueOfLegendsPfis
-createdb LeagueOfLegendsPfis_test
-```
+
+
 
 ## Haskell Setup
 
@@ -51,3 +67,5 @@ stack test --flag LeagueOfLegendsPfis:library-only --flag LeagueOfLegendsPfis:de
 * There are several chatrooms you can ask for help:
 	* For IRC, try Freenode#yesod and Freenode#haskell
 	* [Functional Programming Slack](https://fpchat-invite.herokuapp.com/), in the #haskell, #haskell-beginners, or #yesod channels.
+
+
