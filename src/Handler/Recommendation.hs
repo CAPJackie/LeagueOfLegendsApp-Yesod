@@ -11,7 +11,17 @@ import Import
 
 getRecommendationR :: Handler Html
 getRecommendationR = do
+    let recommendationsTitle = "Building recommendations!!" :: Text
+    allChampions <- runDB $ getAllChampions
     defaultLayout $ do
-        let recommendationsTitle = "Building recommendations!!" :: Text
+        let (championListId) = championIds
         setTitle "Champions recommendations"
         $(widgetFile "recommendation")
+
+
+
+championIds :: (Text)
+championIds = ("js-championList")
+
+getAllChampions :: DB [Entity Champion]
+getAllChampions = selectList [] [Asc ChampionIdName]

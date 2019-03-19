@@ -18,5 +18,6 @@ Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived
     deriving Show
 
 Champion
-    id Text
+    idName Text
+    deriving Show
     
