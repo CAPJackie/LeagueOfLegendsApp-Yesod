@@ -17,4 +17,6 @@
 /recommendations RecommendationR GET
 
 
-/recommendations/#Text RecommendationVideoR GET
+/recommendations/#Text RecommendationVideoR GET POST
+
+/videos/#Text VideoR POST

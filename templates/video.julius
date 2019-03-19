@@ -1,0 +1,33 @@
+$(function() {
+    $("##{rawJS videoFormId}").submit(function(event) {
+    event.preventDefault();
+
+    var name = $("##{rawJS videoNameTextareaId}").val();
+    var url = $("##{rawJS videoUrlTextareaId}").val();
+    if (!name || !url) {
+      alert("Please fill out the form fields first.");
+      return;
+    }
+    $.ajax({
+      url: '@{RecommendationVideoR}',
+      type: 'POST',
+      contentType: "application/json",
+      data: JSON.stringify({
+        name: name,
+        url: url
+      }),
+      success: function (data) {
+        var newListElement = $("<li></li>");
+        var newVideoElement = jQuery('<a>').attr('href', data.url).text(data.name);
+        newListElement.append(newVideoElement);
+        
+        console.log(data);
+        $("##{rawJS videoListId}").append(newListElement);
+      },
+      error: function (data) {
+        console.log("Error creating video recommendation: " + data);
+      },
+    });
+
+  });
+});

@@ -22,9 +22,10 @@ Champion
     deriving Show
 
 
-Video
+Video json
     champion ChampionId
     name Text
     url Text
+    deriving Eq
     deriving Show
     
