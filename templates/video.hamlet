@@ -1,0 +1,12 @@
+$doctype 5
+<html>
+    <head>
+        <title>Champion
+    <body>
+        <h1>#{videosTitle}
+        <div>
+            <ul ##{videoListId}>
+                $forall video <- allVideos
+                    <li>
+                        <a href=#{videoUrl $ entityVal video}>
+                            #{videoName $ entityVal video}

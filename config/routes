@@ -15,3 +15,6 @@
 
 
 /recommendations RecommendationR GET
+
+
+/recommendations/#Text RecommendationVideoR GET
