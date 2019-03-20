@@ -19,4 +19,4 @@
 
 /recommendations/#Text RecommendationVideoR GET POST
 
-/videos/#Text VideoR POST
+/videos VideoR POST

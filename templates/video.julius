@@ -1,5 +1,5 @@
 $(function() {
-    $("##{rawJS videoFormId}").submit(function(event) {
+  $("##{rawJS videoFormId}").submit(function(event) {
     event.preventDefault();
 
     var name = $("##{rawJS videoNameTextareaId}").val();
@@ -9,10 +9,11 @@ $(function() {
       return;
     }
     $.ajax({
-      url: '@{RecommendationVideoR}',
+      url: '@{VideoR}',
       type: 'POST',
       contentType: "application/json",
       data: JSON.stringify({
+        champion: 1,
         name: name,
         url: url
       }),
@@ -25,7 +26,7 @@ $(function() {
         $("##{rawJS videoListId}").append(newListElement);
       },
       error: function (data) {
-        console.log("Error creating video recommendation: " + data);
+        console.log("Error creating video recommendation: " + JSON.stringify(data));
       },
     });
 
