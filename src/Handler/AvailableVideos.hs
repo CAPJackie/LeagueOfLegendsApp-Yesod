@@ -13,28 +13,31 @@ import Text.Julius (RawJS (..))
 
 getRecommendationVideoR :: Text -> Handler Html
 getRecommendationVideoR championId = do
-    let handlerName = "getRecommendationVideoR" :: Text
+    --let handlerName = "getRecommendationVideoR" :: Text
     allVideos <- selectVideosByChampId championId
     let videosTitle = "Here it should go champion's name " ++ (show (length allVideos)) :: String
     
     defaultLayout $ do
-        let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId) = videoIds
+        let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteButtonId, updateButtonId) = videoIds
+        let actualChampion = championId
         setTitle . toHtml $ "Champion" <> championId
         $(widgetFile "video")
 
 postRecommendationVideoR :: Text -> Handler Html
 postRecommendationVideoR championId = do
-    let handlerName = "postRecommendationVideoR" :: Text
+    --let handlerName = "postRecommendationVideoR" :: Text
+
     allVideos <- selectVideosByChampId championId
     let videosTitle = "Here it should go champion's name " ++ (show (length allVideos)) :: String
     defaultLayout $ do
-        let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId) = videoIds
+        let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteButtonId, updateButtonId) = videoIds
+        let actualChampion = championId
         setTitle . toHtml $ "Champion" <> championId
         $(widgetFile "video")
 
 
-videoIds :: (Text, Text, Text, Text)
-videoIds = ("js-videoForm","js-videoName", "js-videoUrl", "js-videoList")
+videoIds :: (Text, Text, Text, Text, Text, Text)
+videoIds = ("js-videoForm","js-videoName", "js-videoUrl", "js-videoList", "js-deleteButton", "js-updateButton")
 
 selectVideosByChampId :: Text -> Handler [Entity Video]
 selectVideosByChampId t = runDB $ rawSql s [toPersistValue t]

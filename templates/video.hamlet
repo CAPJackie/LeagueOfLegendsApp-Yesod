@@ -15,3 +15,7 @@ $doctype 5
                     <li>
                         <a href=#{videoUrl $ entityVal video}>
                             #{videoName $ entityVal video}
+                        <button ##{deleteButtonId}>
+                            Delete 
+                        <button ##{updateButtonId}>
+                            Update
