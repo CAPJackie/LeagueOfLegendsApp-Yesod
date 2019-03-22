@@ -3,16 +3,25 @@
         <div .row>
             <h1 .header>
                 MyLolApp-Yesod
-        <div .row>
-            <form action="/champions".btn .btn-default>
-                <input type="submit" value="Adicionar Campeon" />
-        <div .row>
-            <form action="/championslist".btn .btn-default>
-                <input type="submit" value="Lista de Campeones" />
-        <div .row>
-            <form action="/recommendations".btn .btn-default>
-                <input type="submit" value="Recomendaciones" />
+
+        <br>
+        <br>
 
         <div .row>
-            <form action="/equipment".btn .btn-default>
-                <input type="submit" value="Listado de Objetos" />
+            <form action="/recommendations">
+                <input type="submit" value="Video Recommendations" .btn .btn-danger />
+
+        <div .row>
+            <form action="/champions">
+                <input type="submit" value="Add champion" .btn .btn-danger />
+        <div .row>
+            <form action="/championslist">
+                <input type="submit" value="Champion List" .btn .btn-danger />
+
+        <div .row>
+            <form action="/newEquipment">
+                <input type="submit" value="Add Equipment" .btn .btn-danger />
+
+        <div .row>
+            <form action="/equipment">
+                <input type="submit" value="Equipment List" .btn .btn-danger />
