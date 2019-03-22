@@ -22,3 +22,5 @@
 /videos VideoR POST
 
 /champions ChampionNewR GET POST
+
+/video/#VideoId VideoRemovalR POST

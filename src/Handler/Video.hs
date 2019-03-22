@@ -8,7 +8,7 @@ module Handler.Video where
 
 import Import
 
-import        Database.Persist.Sql (rawSql)
+import        Database.Persist.Sql (rawSql, unSqlBackendKey)
 
 postVideoR :: Handler Value
 postVideoR = do
@@ -17,4 +17,9 @@ postVideoR = do
     insertedVideo <- runDB $ insertEntity video
     returnJson insertedVideo
     
-    
+
+postVideoRemovalR :: VideoId -> Handler()
+postVideoRemovalR champId = do
+    runDB $ delete champId
+
+    redirect (RecommendationVideoR (fromString (show (unSqlBackendKey $ unVideoKey $ champId))))

@@ -169,6 +169,7 @@ instance Yesod App where
     isAuthorized FaviconR _ = return Authorized
     isAuthorized RobotsR _ = return Authorized
     isAuthorized ChampionNewR _ = return Authorized
+    isAuthorized (VideoRemovalR _) _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
 
     -- the profile route requires that the user is authenticated, so we

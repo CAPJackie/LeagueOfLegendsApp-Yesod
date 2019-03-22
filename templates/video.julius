@@ -7,7 +7,7 @@ window.onload = function(){
       for(var j = 0; j < liChildren.length; j++){
         if(liChildren[j].tagName === "BUTTON"){
           document.getElementById(liChildren[j].id).onclick = function(event){
-            console.log(event.path[1]);
+            console.log(event.path[0].id);
           }
         }
       }

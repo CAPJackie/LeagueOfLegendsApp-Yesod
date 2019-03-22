@@ -29,10 +29,10 @@ championForm   champion = Champion
 --Create
 getChampionNewR ::  Handler Html
 getChampionNewR = do
-	   (widget, encoding) <- generateFormPost $ renderBootstrap3 BootstrapBasicForm $ championForm Nothing
-	   defaultLayout $ do
-		let actionR = ChampionNewR
-		$(widgetFile "Champion")
+		(widget, encoding) <- generateFormPost $ renderBootstrap3 BootstrapBasicForm $ championForm Nothing
+		defaultLayout $ do
+			let actionR = ChampionNewR
+			$(widgetFile "Champion")
 
 postChampionNewR :: Handler Html
 postChampionNewR = do
