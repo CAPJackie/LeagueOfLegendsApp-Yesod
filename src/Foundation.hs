@@ -173,6 +173,8 @@ instance Yesod App where
     isAuthorized (StaticR _) _ = return Authorized
     isAuthorized ChampionListR _ = return Authorized
     isAuthorized (ChampionDeleteR _) _ = return Authorized
+    isAuthorized EquipmentR _ = return Authorized
+
 
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function

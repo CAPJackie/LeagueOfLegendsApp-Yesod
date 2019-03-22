@@ -1,0 +1,10 @@
+$doctype 5
+<html>
+    <head>
+        <title>LoL Objects
+    <body>
+        <h1>#{equipmentTitle}
+        <div>
+            <ul ##{objectListId}>
+                $forall equi <- allobj
+                    <li> #{equipmentName $ entityVal equi} - #{equipmentCost $ entityVal equi} - #{equipmentSell $ entityVal equi}

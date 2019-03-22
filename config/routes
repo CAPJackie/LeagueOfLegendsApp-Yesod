@@ -16,7 +16,6 @@
 
 /recommendations RecommendationR GET
 
-
 /recommendations/#Text RecommendationVideoR GET POST
 
 /videos VideoR POST
@@ -28,3 +27,5 @@
 /video/#VideoId VideoRemovalR POST
 
 /championslist/#ChampionId ChampionDeleteR POST
+
+/equipment EquipmentR GET
