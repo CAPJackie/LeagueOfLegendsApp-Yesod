@@ -55,7 +55,6 @@ $else
                         #{championRol champion}
 
                     <td>
-                         <button  onclick=post('@{ChampionDeleteR championId}') .btn .btn-danger>
-                                                       <span .glyphicon .glyphicon-trash>
-                                                     delete
+                          <form action="@{ChampionDeleteR championId}" method="post">
+                                                     <input type="submit" name="upvote" value="Delete" />
 
