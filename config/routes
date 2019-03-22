@@ -29,3 +29,7 @@
 /championslist/#ChampionId ChampionDeleteR POST
 
 /equipment EquipmentR GET
+
+/equipment/#EquipmentId DeleteEquipmentR POST
+
+/newequipment NewEquipmentR GET POST

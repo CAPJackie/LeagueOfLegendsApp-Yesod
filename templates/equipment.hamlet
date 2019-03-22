@@ -1,10 +1,21 @@
 $doctype 5
 <html>
     <head>
-        <title>LoL Objects
+        <title>
     <body>
         <h1>#{equipmentTitle}
         <div>
-            <ul ##{objectListId}>
-                $forall equi <- allobj
-                    <li> #{equipmentName $ entityVal equi} - #{equipmentCost $ entityVal equi} - #{equipmentSell $ entityVal equi}
+          <table .table .table-responsive .table-hover>
+              <thead>
+                     <th> Name
+                     <th> Cost
+                     <th> Sell Price
+                     <th> Active Effect
+                     <th>
+              $forall Entity equipmentId obj <- allobj
+                <tbody>
+                      <tr>
+                          <td> #{equipmentName obj}
+                          <td> #{equipmentCost obj}
+                          <td> #{equipmentSell obj}
+                          <td> <form action="@{DeleteEquipmentR equipmentId}" method="post"><input type="submit" value="Borrar" />
