@@ -56,5 +56,5 @@ $else
 
                     <td>
                           <form action="@{ChampionDeleteR championId}" method="post">
-                                                     <input type="submit" name="upvote" value="Delete" />
+                                                     <input type="submit" name="upvote" value="Borrar" />
 
