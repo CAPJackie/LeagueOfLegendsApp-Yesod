@@ -1,0 +1,61 @@
+<div>
+
+<h1> Campeones
+$if null champions
+    <p> No hay campeones ingresados
+$else
+    <table .table .table-responsive .table-hover>
+        <thead>
+                     <th> Nombre
+                     <th> descripcion
+                     <th> vida
+                     <th> Daño de Ataque
+                     <th> Velocidad de Ataque
+                     <th> Velocidad
+                     <th> Regeneracion de Vida
+                     <th> Armadura
+                     <th> Resistencia Magica
+                     <th> Rol
+                     <th>
+
+
+        $forall Entity championId champion <- champions
+
+            <tbody>
+                <tr>
+                    <td>
+                        #{championIdName champion}
+
+                    <td>
+                        #{championDescription champion}
+
+                    <td>
+                        #{championLife champion}
+
+                    <td>
+                        #{championAttackdamage champion}
+
+                    <td>
+                        #{championAttackspeed champion}
+
+
+                    <td>
+                        #{championSpeed champion}
+
+                    <td>
+                        #{championRegenerationlife champion}
+
+                    <td>
+                        #{championArmor champion}
+
+                    <td>
+                        #{championMagicresistence champion}
+
+                    <td>
+                        #{championRol champion}
+
+                    <td>
+                         <button  onclick=post('@{ChampionDeleteR championId}') .btn .btn-danger>
+                                                       <span .glyphicon .glyphicon-trash>
+                                                     delete
+

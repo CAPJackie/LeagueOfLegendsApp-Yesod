@@ -23,4 +23,8 @@
 
 /champions ChampionNewR GET POST
 
+/championslist ChampionListR GET
+
 /video/#VideoId VideoRemovalR POST
+
+/championslist/#ChampionId ChampionDeleteR POST

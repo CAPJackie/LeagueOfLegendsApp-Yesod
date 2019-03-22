@@ -39,8 +39,26 @@ postChampionNewR = do
 		((result,widget), encoding) <- runFormPost $ renderBootstrap3 BootstrapBasicForm $ championForm  Nothing
 		case result of
 		     FormSuccess champion -> do
-				 _ <- runDB $ insert champion
+				 _ <- runDB $ insertEntity champion
 				 redirect HomeR
 		     _ -> defaultLayout $ do
 			let actionR = ChampionNewR
 			$(widgetFile "Champion")
+
+--Delete
+postChampionDeleteR :: ChampionId -> Handler ()
+postChampionDeleteR championId = do
+                            runDB $ delete championId
+                            redirect ChampionListR
+
+--list
+getChampionListR ::  Handler Html
+getChampionListR  = do
+                    champions <- runDB $ getAllChampions
+                    ( _ , _ ) <- generateFormPost $ renderBootstrap3 BootstrapBasicForm $ championForm Nothing
+                    defaultLayout $ do
+                       $(widgetFile "ChampionView")
+
+
+getAllChampions :: DB [Entity Champion]
+getAllChampions = selectList [] [Asc ChampionIdName]
