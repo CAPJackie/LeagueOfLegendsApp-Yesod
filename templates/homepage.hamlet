@@ -13,3 +13,6 @@
             <form action="/recommendations".btn .btn-default>
                 <input type="submit" value="Recomendaciones" />
 
+        <div .row>
+            <form action="/equipment".btn .btn-default>
+                <input type="submit" value="Listado de Objetos" />
