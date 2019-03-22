@@ -20,3 +20,5 @@
 /recommendations/#Text RecommendationVideoR GET POST
 
 /videos VideoR POST
+
+/champions ChampionNewR GET POST

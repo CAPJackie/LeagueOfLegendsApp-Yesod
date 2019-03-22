@@ -19,6 +19,15 @@ Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived
 
 Champion
     idName Text
+    description Text
+    life Text
+    attackdamage Text
+    attackspeed Text
+    speed Int
+    regenerationlife Text
+    armor Text
+    magicresistence Text
+    rol Text
     deriving Show
 
 
