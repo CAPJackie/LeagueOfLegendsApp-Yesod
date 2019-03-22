@@ -1,3 +1,20 @@
+
+window.onload = function(){
+  var ulChildren = document.getElementById("#{rawJS videoListId}").children;
+
+    for(var i = 0; i < ulChildren.length; i++){
+      var liChildren = ulChildren[i].children;
+      for(var j = 0; j < liChildren.length; j++){
+        if(liChildren[j].tagName === "BUTTON"){
+          document.getElementById(liChildren[j].id).onclick = function(event){
+            console.log(event.path[1]);
+          }
+        }
+      }
+    }
+};
+
+
 $(function() {
   $("##{rawJS videoFormId}").submit(function(event) {
     event.preventDefault();
@@ -34,12 +51,8 @@ $(function() {
 
 
 
-  $("##{rawJS deleteButtonId}").click(function(event){
-    event.preventDefault();
-  });
 
-  $("##{rawJS updateButtonId}").click(function(event){
-    event.preventDefault();
-    console.log("Update button clicked");
-  });
+
+ 
+
 });

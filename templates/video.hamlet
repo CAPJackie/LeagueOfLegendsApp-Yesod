@@ -15,7 +15,12 @@ $doctype 5
                     <li>
                         <a href=#{videoUrl $ entityVal video}>
                             #{videoName $ entityVal video}
-                        <button ##{deleteButtonId}>
-                            Delete 
-                        <button ##{updateButtonId}>
-                            Update
+                        <button .btn.btn-primary ##{show (unSqlBackendKey $ unVideoKey $ entityKey video)}>
+                            Delete
+
+                        
+        <div>
+            <form .form-vertical ##{deleteRecommendationFormId}>
+                <textarea rows="1" ##{deleteTextareaId} placeholder="Recommendation ID" required></textarea>
+                <button .btn.btn-primary type=submit>
+                    Delete
