@@ -40,7 +40,7 @@ postChampionNewR = do
 		case result of
 		     FormSuccess champion -> do
 				 _ <- runDB $ insertEntity champion
-				 redirect HomeR
+				 redirect ChampionListR
 		     _ -> defaultLayout $ do
 			let actionR = ChampionNewR
 			$(widgetFile "Champion")
