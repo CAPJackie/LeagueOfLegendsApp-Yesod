@@ -1,0 +1,9 @@
+$doctype 5
+<html>
+    <head>
+        <title>
+    <body>
+        <form method=post action=@{actionR} encType=#{encoding}>
+              <h1> Add a new object
+              ^{widget}
+              <button href=@{NewEquipmentR} .btn .btn-default> Adicionar
