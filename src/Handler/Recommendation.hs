@@ -11,7 +11,7 @@ import Import
 
 getRecommendationR :: Handler Html
 getRecommendationR = do
-    let recommendationsTitle = "Building recommendations!!" :: Text
+    let recommendationsTitle = "Select a champion:" :: Text
     allChampions <- runDB $ getAllChampions
     defaultLayout $ do
         let (championListId) = championIds

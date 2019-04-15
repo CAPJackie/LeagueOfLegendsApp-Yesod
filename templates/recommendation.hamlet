@@ -3,10 +3,10 @@ $doctype 5
     <head>
         <title>LoL Recommendations
     <body>
-        <h1>#{recommendationsTitle}
+        <h1 .title >#{recommendationsTitle}
         <div>
-            <ul ##{championListId}>
+            <ul .list ##{championListId}>
                 $forall champion <- allChampions
                     <li>
-                        <a href="http://www.yesodweb.com/book/">
+                        <a href="@{RecommendationVideoR (entityKey champion)}">
                             #{championIdName $ entityVal champion}

@@ -16,7 +16,7 @@
 
 /recommendations RecommendationR GET
 
-/recommendations/#Text RecommendationVideoR GET POST
+/recommendations/#ChampionId RecommendationVideoR GET POST
 
 /videos VideoR POST
 

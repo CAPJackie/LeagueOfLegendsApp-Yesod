@@ -22,4 +22,4 @@ postVideoRemovalR :: VideoId -> Handler()
 postVideoRemovalR champId = do
     runDB $ delete champId
 
-    redirect (RecommendationVideoR (fromString (show (unSqlBackendKey $ unVideoKey $ champId))))
+    redirect (RecommendationR)

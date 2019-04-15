@@ -11,7 +11,7 @@ import Text.Julius (RawJS (..))
 --import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3)
 
 
-getRecommendationVideoR :: Text -> Handler Html
+getRecommendationVideoR :: ChampionId -> Handler Html
 getRecommendationVideoR championId = do
     --let handlerName = "getRecommendationVideoR" :: Text
     allVideos <- selectVideosByChampId championId
@@ -19,11 +19,11 @@ getRecommendationVideoR championId = do
     
     defaultLayout $ do
         let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteRecommendationFormId, deleteTextareaId) = videoIds
-        let actualChampion = championId
-        setTitle . toHtml $ "Champion" <> championId
+        let actualChampion = show (unSqlBackendKey $ unChampionKey $ championId)
+        setTitle . toHtml $ "Champion" <> show (unSqlBackendKey $ unChampionKey $ championId)
         $(widgetFile "video")
 
-postRecommendationVideoR :: Text -> Handler Html
+postRecommendationVideoR :: ChampionId -> Handler Html
 postRecommendationVideoR championId = do
     --let handlerName = "postRecommendationVideoR" :: Text
 
@@ -31,8 +31,8 @@ postRecommendationVideoR championId = do
     let videosTitle = "Here it should go champion's name " ++ (show (length allVideos)) :: String
     defaultLayout $ do
         let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteRecommendationFormId, deleteTextareaId) = videoIds
-        let actualChampion = championId
-        setTitle . toHtml $ "Champion" <> championId
+        let actualChampion = show (unSqlBackendKey $ unChampionKey $ championId)
+        setTitle . toHtml $ "Champion" <> show (unSqlBackendKey $ unChampionKey $ championId)
         $(widgetFile "video")
 
 
@@ -40,6 +40,6 @@ postRecommendationVideoR championId = do
 videoIds :: (Text, Text, Text, Text, Text, Text)
 videoIds = ("js-videoForm","js-videoName", "js-videoUrl", "js-videoList", "js-deleteRecommendationForm", "js-deleteValue")
 
-selectVideosByChampId :: Text -> Handler [Entity Video]
+selectVideosByChampId :: ChampionId -> Handler [Entity Video]
 selectVideosByChampId t = runDB $ rawSql s [toPersistValue t]
     where s = "SELECT distinct ?? FROM video, champion WHERE video.champion = ?"
