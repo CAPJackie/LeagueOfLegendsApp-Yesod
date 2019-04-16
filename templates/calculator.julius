@@ -6,5 +6,7 @@ function calculateTheResult(){
     var loses = document.getElementById("loses").value;
 
 
-    location = '/calculator/result/league/'+leagueValue;
+
+    location.href = 'calculator/result/league/'+leagueValue+'/division/'+division+'/wins/'+wins+'/loses/'+loses;
+
 }

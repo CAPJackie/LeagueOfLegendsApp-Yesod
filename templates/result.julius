@@ -1,0 +1,9 @@
+window.onload = function(){
+    var division = #{toJSON division};
+    var league = #{toJSON league};
+    var wins = #{toJSON wins};
+    var loses = #{toJSON loses};
+
+    var calculatedElo = Math.round((((wins/loses) * 100) - division) * 100) / 100; 
+    document.getElementById("message").innerHTML = "Your Elo is: " + calculatedElo;
+}       

@@ -1,9 +1,10 @@
+$doctype 5
 <html>
     <head>
         <title>
     <body>
         <div>
-            <form #calculatorForm onsubmit="return calculateTheResult()">
+            <form #calculatorForm >
                 League: <br>
                 <select #league name="leagues">
                     <option value="bronze">Bronze</option>
@@ -15,13 +16,13 @@
                     <option value="challenger">Challenger</option>
                 <br>
                 Division: <br>
-                <input #division type="number" name="Division" min="1" max="5">
+                <input #division type="number" name="Division" min="1" max="5" required>
                 <br>
                 Ranked victories: <br>
-                <input #wins type="number" name="Won">
+                <input #wins type="number" name="Won" required>
                 <br>
                 Ranked defeats: <br>
-                <input #loses type="number" name="Defeated">
+                <input #loses type="number" name="Defeated" required>
                 <br>
-                <input #submitButton type="submit" value="Calcular">
+                <input type="button" value="Calculate" onclick="calculateTheResult();">
                 <br>

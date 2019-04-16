@@ -20,7 +20,7 @@ getCalculatorResultR league division wins loses = do
         $(widgetFile "result")-}
 
 
-getCalculatorResultR :: Text -> Handler Html
-getCalculatorResultR league = do
+getCalculatorResultR :: Text -> Int -> Int -> Int -> Handler Html
+getCalculatorResultR league division wins loses = do
     defaultLayout $ do
        $(widgetFile "result")
