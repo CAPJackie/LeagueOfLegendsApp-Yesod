@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+    <body>
+        <div>
+            <form #calculatorForm onsubmit="return calculateTheResult()">
+                League: <br>
+                <select #league name="leagues">
+                    <option value="bronze">Bronze</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                    <option value="diamond">Diamond</option>
+                    <option value="master">Master</option>
+                    <option value="challenger">Challenger</option>
+                <br>
+                Division: <br>
+                <input #division type="number" name="Division" min="1" max="5">
+                <br>
+                Ranked victories: <br>
+                <input #wins type="number" name="Won">
+                <br>
+                Ranked defeats: <br>
+                <input #loses type="number" name="Defeated">
+                <br>
+                <input #submitButton type="submit" value="Calcular">
+                <br>

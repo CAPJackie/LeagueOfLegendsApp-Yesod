@@ -33,3 +33,10 @@
 /equipment/#EquipmentId DeleteEquipmentR POST
 
 /newequipment NewEquipmentR GET POST
+
+/calculator CalculatorR GET
+
+
+-- /calculator/result/league/#Text/division/#Int/wins/#Int/loses/#Int CalculatorResultR GET
+
+/calculator/result/league/#Text CalculatorResultR GET

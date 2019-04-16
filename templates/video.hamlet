@@ -6,7 +6,9 @@ $doctype 5
         <h1>#{videosTitle}
         <form .form-horizontal ##{videoFormId}>
             <textarea rows="1" ##{videoNameTextareaId} placeholder="Name of the video" required></textarea>
-            <textarea rows="1" ##{videoUrlTextareaId} placeholder="Url of the video" required></textarea>
+            <br>
+            <input type="url" ##{videoUrlTextareaId} placeholder="Url of the video" required>
+            <br> 
             <button .btn.btn-primary type=submit>
                 Create Recommendation
         <div>

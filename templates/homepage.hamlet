@@ -25,3 +25,6 @@
         <div .row>
             <form action="/equipment">
                 <input type="submit" value="Equipment List" .btn .btn-danger />
+        <div .row>
+            <form action="/calculator">
+                <input type="submit" value="Elo Calculator" .btn .btn-danger />

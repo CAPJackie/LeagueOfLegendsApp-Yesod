@@ -1,0 +1,10 @@
+function calculateTheResult(){
+    var league = document.getElementById("league");
+    var leagueValue = league.options[league.selectedIndex].text;
+    var division = document.getElementById("division").value;
+    var wins = document.getElementById("wins").value;
+    var loses = document.getElementById("loses").value;
+
+
+    location = '/calculator/result/league/'+leagueValue;
+}

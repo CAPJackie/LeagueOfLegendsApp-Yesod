@@ -176,6 +176,7 @@ instance Yesod App where
     isAuthorized EquipmentR _ = return Authorized
     isAuthorized NewEquipmentR _ = return Authorized
     isAuthorized (DeleteEquipmentR _) _ = return Authorized
+    isAuthorized CalculatorR _ = return Authorized
 
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function
