@@ -4,26 +4,32 @@ $doctype 5
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Rajdhani|Squada+One" rel="stylesheet">
         <title>champion recommendation
     <body>
         <section>
             <header>
                 <h1>create and list champions recommendations
             <h2>#{videosTitle}
-            <div>
-                <h3> add a recommendation
-                <form ##{videoFormId}>
-                    <input type="text" ##{videoNameTextareaId} placeholder="Name of the video" required>
-                    <input type="url" ##{videoUrlTextareaId} placeholder="Url of the video" required>
-                    <input type="submit">
-            <div>
-                <h3> list recommendations
-                <ul ##{videoListId}>
-                    $forall video <- allVideos
-                        <li>
-                            <a href=#{videoUrl $ entityVal video}>
-                                #{videoName $ entityVal video}
-                            <form action="@{VideoRemovalR (entityKey video)}" method="post">
-                                <input type="submit" name="upvote" value="Delete" />
+            <div .flex-container>
+                <div>
+                    <h3> add recommendation
+                    <form ##{videoFormId} aria-label="Fill recommendation params">
+                        <label for="name">Name</label>
+                        <input type="text" #name required title="Enter the name of the video">
+
+                        <label for="url">Url</label>
+                        <input type="url" #url required title="Enter the url of the video">
+
+                        <input type="submit" #submit-button value="Submit" title="Click this button after you've filled out the form elements">
+                <div>
+                    <h3> recommendations
+                    <ul ##{videoListId}>
+                        $forall video <- allVideos
+                            <li>
+                                <a href=#{videoUrl $ entityVal video}>
+                                    #{videoName $ entityVal video}
+                                <form action="@{VideoRemovalR (entityKey video)}" method="post">
+                                    <input type="submit" name="upvote" value="Delete" />
         <footer>
             This is the footer section

@@ -1,28 +1,41 @@
 $doctype 5
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Rajdhani|Squada+One" rel="stylesheet">
         <title>
     <body>
-        <div>
-            <form #calculatorForm >
-                League: <br>
-                <select #league name="leagues">
-                    <option value="bronze">Bronze</option>
-                    <option value="silver">Silver</option>
-                    <option value="gold">Gold</option>
-                    <option value="platinum">Platinum</option>
-                    <option value="diamond">Diamond</option>
-                    <option value="master">Master</option>
-                    <option value="challenger">Challenger</option>
-                <br>
-                Division: <br>
-                <input #division type="number" name="Division" min="1" max="5" required>
-                <br>
-                Ranked victories: <br>
-                <input #wins type="number" name="Won" required>
-                <br>
-                Ranked defeats: <br>
-                <input #loses type="number" name="Defeated" required>
-                <br>
-                <input type="button" value="Calculate" onclick="calculateTheResult();">
-                <br>
+        <section>
+            <header>
+                <h1> elo calculator
+            <div>
+                <form #calculatorForm aria-label="Fill the calculator params">
+                    <label for="league">
+                        League
+                    <select #league title="Select your actual league">
+                        <option value="bronze">Bronze</option>
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                        <option value="platinum">Platinum</option>
+                        <option value="diamond">Diamond</option>
+                        <option value="master">Master</option>
+                        <option value="challenger">Challenger</option>
+
+                    <label for="division">
+                        Division
+                    <input #division type="number" name="Division" min="1" max="5" required>
+
+                    <label for="victories">
+                        Ranked victories
+                    <input #victories type="number" name="Won" required>
+
+                    <label for="defeats">
+                        Division
+                    <input #defeats type="number" name="Defeated" required>
+                
+                
+                    <input type="button" value="Calculate" onclick="calculateTheResult();">
+        <footer> this is the footer
+            

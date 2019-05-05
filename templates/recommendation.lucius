@@ -1,3 +1,4 @@
+
 .list{
     list-style-type: circle;
     color: #000;
@@ -45,7 +46,4 @@ article div ul li{
     border-radius: 3px;
 }
 
-a:hover{
-    outline:0;
-}
 

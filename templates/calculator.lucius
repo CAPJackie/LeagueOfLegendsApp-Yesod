@@ -1,0 +1,28 @@
+section{
+    background-image: url(@{StaticR _Nidalee_jpg});
+    background-size: 100%
+    padding: 2% 2% 0 2%;
+    height: 670px;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+footer{
+    background-color: rgb(27, 28, 29);
+    margin: 2% 0 0 0;
+}
+
+
+form * {
+    display: block;
+}
+
+form{
+    background-color:yellow;
+}
+
+body{
+    background-color:black;
+}

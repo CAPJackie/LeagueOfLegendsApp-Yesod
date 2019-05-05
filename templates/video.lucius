@@ -1,5 +1,5 @@
 form * {
-    display: block;
+    text-align: center;
 }
 
 section{
@@ -13,11 +13,67 @@ h1, h2, h3{
     color:white;
 }
 
+h1{
+    text-transform: uppercase;
+}
+
+h3{
+    text-transform: capitalize;
+}
+
 h1, h2{
     text-align: center;
 }
 
-section * {
-    padding: 5%;
+
+section header{
+    padding: 3% 0;
 }
 
+input{
+    margin:3% 0;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-container div{
+    background-color: blue;
+    padding: 2%;
+}
+
+body{
+    background-color: black;
+}
+
+footer{
+    background-color: rgb(27, 28, 29);
+    margin: 2% 0 0 0;
+}
+
+section * {
+    font-family: 'Allerta Stencil';
+}
+
+form * :not([input="submit"]) {
+    width: 60%;
+}
+
+form * {
+    text-align: center;
+}
+
+form [type="submit"]{
+    background-color:red;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
