@@ -1,12 +1,21 @@
 $doctype 5
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>LoL Recommendations
     <body>
-        <h1 .title >#{recommendationsTitle}
-        <div>
-            <ul .list ##{championListId}>
-                $forall champion <- allChampions
-                    <li>
-                        <a href="@{RecommendationVideoR (entityKey champion)}">
-                            #{championIdName $ entityVal champion}
+        <article>
+            <header>
+                <h1 .title>available champions
+                <h2> select a champion:
+            <div>
+                <ul .list ##{championListId}>
+                        $forall champion <- allChampions
+                            <li>
+                                <a href="@{RecommendationVideoR (entityKey champion)}">
+                                    <div>
+                                        #{championIdName $ entityVal champion}
+        <footer>
+            Page created by Martin, Diego and Juan David

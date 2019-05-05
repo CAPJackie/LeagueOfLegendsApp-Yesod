@@ -6,7 +6,7 @@ dependencies:
 # Due to a bug in GHC 8.0.1, we block its usage
 # See: https://ghc.haskell.org/trac/ghc/ticket/12130
 - base >=4.8.2.0 && <4.9 || >=4.9.1.0 && <5
-
+- yesod-auth-oauth2
 - yesod >=1.6 && <1.7
 - yesod-core >=1.6 && <1.7
 - yesod-auth >=1.6 && <1.7

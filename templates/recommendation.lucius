@@ -1,13 +1,47 @@
-.title {
-    color: #999999;
-    font-family: arial, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 1px;
-}
-
 .list{
     list-style-type: circle;
     color: #000;
 }
+
+article{
+    background-image: url(img/Jayce.jpg);
+    background-size: 100%;
+    padding: 2% 2% 0 2%;
+    height: 670px;
+}
+
+body{
+    background-color: #000;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1, h2, a{
+    color: white;
+}
+
+article div ul {
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 0;
+}
+
+article div ul li{
+    margin: 6%;
+    padding: 2%;
+    background-color: black;
+    list-style-type: none;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+

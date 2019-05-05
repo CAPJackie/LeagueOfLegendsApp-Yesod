@@ -10,6 +10,8 @@
 
 module Foundation where
 
+import qualified Data.List as L
+import Yesod.Auth.OAuth2.Google
 import Import.NoFoundation
 import Database.Persist.Sql (ConnectionPool, runSqlPool)
 import Text.Hamlet          (hamletFile)
@@ -163,21 +165,21 @@ instance Yesod App where
     isAuthorized (AuthR _) _ = return Authorized
     isAuthorized CommentR _ = return Authorized
     isAuthorized HomeR _ = return Authorized
-    isAuthorized RecommendationR _ = return Authorized
-    isAuthorized (RecommendationVideoR _) _ = return Authorized
-    isAuthorized VideoR _ = return Authorized
+    isAuthorized RecommendationR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (RecommendationVideoR _) _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized VideoR _ = authorizedForPrivileges [PrvRegisteredUser]
     isAuthorized FaviconR _ = return Authorized
     isAuthorized RobotsR _ = return Authorized
-    isAuthorized ChampionNewR _ = return Authorized
-    isAuthorized (VideoRemovalR _) _ = return Authorized
+    isAuthorized ChampionNewR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (VideoRemovalR _) _ = authorizedForPrivileges [PrvRegisteredUser]
     isAuthorized (StaticR _) _ = return Authorized
-    isAuthorized ChampionListR _ = return Authorized
-    isAuthorized (ChampionDeleteR _) _ = return Authorized
-    isAuthorized EquipmentR _ = return Authorized
-    isAuthorized NewEquipmentR _ = return Authorized
-    isAuthorized (DeleteEquipmentR _) _ = return Authorized
-    isAuthorized CalculatorR _ = return Authorized
-    isAuthorized (CalculatorResultR _ _ _ _) _ = return Authorized
+    isAuthorized ChampionListR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (ChampionDeleteR _) _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized EquipmentR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized NewEquipmentR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (DeleteEquipmentR _) _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized CalculatorR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (CalculatorResultR _ _ _ _) _ = authorizedForPrivileges [PrvRegisteredUser]
 
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function
@@ -266,13 +268,27 @@ instance YesodAuth App where
             Nothing -> Authenticated <$> insert User
                 { userIdent = credsIdent creds
                 , userPassword = Nothing
+                , userPerms = []
                 }
 
     -- You can add other plugins like Google Email, email or OAuth here
     authPlugins :: App -> [AuthPlugin App]
-    authPlugins app = [authOpenId Claimed []] ++ extraAuthPlugins
-        -- Enable authDummy login if enabled.
-        where extraAuthPlugins = [authDummy | appAuthDummyLogin $ appSettings app]
+    authPlugins app = [oauth2GoogleScoped ["email", "profile"] clientId clientSecret]
+
+
+authorizedForPrivileges :: [Privileges] -> Handler AuthResult
+authorizedForPrivileges perms = do
+    mu <- maybeAuth
+    return $ case mu of
+        Nothing -> Unauthorized "You must login to access this page"
+        Just u@(Entity userId user) ->
+            if hasPrivileges u perms
+                then Authorized
+                else Unauthorized "Not enought priviledges"
+
+
+hasPrivileges :: Entity User -> [Privileges] -> Bool
+hasPrivileges (Entity _ user) perms = True
 
 -- | Access function to determine if a user is logged in.
 isAuthenticated :: Handler AuthResult
@@ -307,3 +323,11 @@ unsafeHandler = Unsafe.fakeHandlerGetLogger appLogger
 -- https://github.com/yesodweb/yesod/wiki/Sending-email
 -- https://github.com/yesodweb/yesod/wiki/Serve-static-files-from-a-separate-domain
 -- https://github.com/yesodweb/yesod/wiki/i18n-messages-in-the-scaffolding
+
+-- Replace with Google client ID.
+clientId :: Text
+clientId = "233640648820-tcvi8d19hk0mp7lbs84a6mdogqvv3s7m.apps.googleusercontent.com"
+
+-- Replace with Google secret ID.
+clientSecret :: Text
+clientSecret = "V0Ktb9ZIM7Wk8UxzazKGOQ-m" 
