@@ -1,21 +1,29 @@
 $doctype 5
-<html>
+<html lang="en">
     <head>
-        <title>Champion
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>champion recommendation
     <body>
-        <h1>#{videosTitle}
-        <form .form-horizontal ##{videoFormId}>
-            <textarea rows="1" ##{videoNameTextareaId} placeholder="Name of the video" required></textarea>
-            <br>
-            <input type="url" ##{videoUrlTextareaId} placeholder="Url of the video" required>
-            <br> 
-            <button .btn.btn-primary type=submit>
-                Create Recommendation
-        <div>
-            <ul ##{videoListId}>
-                $forall video <- allVideos
-                    <li>
-                        <a href=#{videoUrl $ entityVal video}>
-                            #{videoName $ entityVal video}
-                        <form action="@{VideoRemovalR (entityKey video)}" method="post">
-                            <input type="submit" name="upvote" value="Delete" />
+        <section>
+            <header>
+                <h1>create and list champions recommendations
+            <h2>#{videosTitle}
+            <div>
+                <h3> add a recommendation
+                <form ##{videoFormId}>
+                    <input type="text" ##{videoNameTextareaId} placeholder="Name of the video" required>
+                    <input type="url" ##{videoUrlTextareaId} placeholder="Url of the video" required>
+                    <input type="submit">
+            <div>
+                <h3> list recommendations
+                <ul ##{videoListId}>
+                    $forall video <- allVideos
+                        <li>
+                            <a href=#{videoUrl $ entityVal video}>
+                                #{videoName $ entityVal video}
+                            <form action="@{VideoRemovalR (entityKey video)}" method="post">
+                                <input type="submit" name="upvote" value="Delete" />
+        <footer>
+            This is the footer section

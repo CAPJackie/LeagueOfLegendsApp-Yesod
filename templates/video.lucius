@@ -1,0 +1,23 @@
+form * {
+    display: block;
+}
+
+section{
+    background-image: url(@{StaticR _Yasuo_jpg});
+    background-size: 100%
+    padding: 2% 2% 0 2%;
+    height: 670px;
+}
+
+h1, h2, h3{
+    color:white;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+section * {
+    padding: 5%;
+}
+

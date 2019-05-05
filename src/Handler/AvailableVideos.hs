@@ -13,9 +13,10 @@ import Text.Julius (RawJS (..))
 
 getRecommendationVideoR :: ChampionId -> Handler Html
 getRecommendationVideoR championId = do
-    --let handlerName = "getRecommendationVideoR" :: Text
+    champion <- runDB $ get404 championId
+
     allVideos <- selectVideosByChampId championId
-    let videosTitle = "Here it should go champion's name " ++ (show (length allVideos)) :: String
+    let videosTitle = championIdName champion :: Text
     
     defaultLayout $ do
         let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteRecommendationFormId, deleteTextareaId) = videoIds
@@ -25,10 +26,11 @@ getRecommendationVideoR championId = do
 
 postRecommendationVideoR :: ChampionId -> Handler Html
 postRecommendationVideoR championId = do
-    --let handlerName = "postRecommendationVideoR" :: Text
+    champion <- runDB $ get404 championId
 
     allVideos <- selectVideosByChampId championId
-    let videosTitle = "Here it should go champion's name " ++ (show (length allVideos)) :: String
+    let videosTitle = championIdName champion :: Text
+    
     defaultLayout $ do
         let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteRecommendationFormId, deleteTextareaId) = videoIds
         let actualChampion = show (unSqlBackendKey $ unChampionKey $ championId)

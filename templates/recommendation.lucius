@@ -4,7 +4,7 @@
 }
 
 article{
-    background-image: url(img/Jayce.jpg);
+    background-image: url(@{StaticR _Jayce_jpg});
     background-size: 100%;
     padding: 2% 2% 0 2%;
     height: 670px;
@@ -43,5 +43,9 @@ article div ul li{
     list-style-type: none;
     border: 2px solid white;
     border-radius: 3px;
+}
+
+a:hover{
+    outline:0;
 }
 
