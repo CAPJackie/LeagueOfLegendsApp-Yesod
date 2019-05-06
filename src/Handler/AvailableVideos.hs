@@ -8,7 +8,6 @@ module Handler.AvailableVideos where
 import Import
 import        Database.Persist.Sql (rawSql, unSqlBackendKey)
 import Text.Julius (RawJS (..))
---import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3)
 
 
 getRecommendationVideoR :: ChampionId -> Handler Html
@@ -30,7 +29,6 @@ postRecommendationVideoR championId = do
 
     allVideos <- selectVideosByChampId championId
     let videosTitle = championIdName champion :: Text
-    
     defaultLayout $ do
         let (videoFormId, videoNameTextareaId, videoUrlTextareaId, videoListId, deleteRecommendationFormId, deleteTextareaId) = videoIds
         let actualChampion = show (unSqlBackendKey $ unChampionKey $ championId)

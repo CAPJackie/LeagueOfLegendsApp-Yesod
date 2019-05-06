@@ -5,8 +5,14 @@ section{
     height: 670px;
 }
 
+section div form{
+    border: 3px solid #00BFFF;
+    border-radius: 2%;
+}
+
 h1{
     text-transform: uppercase;
+    margin-bottom: 5%;
 }
 
 footer{
@@ -14,15 +20,53 @@ footer{
     margin: 2% 0 0 0;
 }
 
-
 form * {
-    display: block;
+    text-align: center;
 }
 
 form{
-    background-color:yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #bb742e;
+    width:30%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+h1{
+    text-align: center;
+    padding-top: 3%;
+}
+
+h1, label{
+    color:white;
 }
 
 body{
     background-color:black;
+}
+
+form * {
+    text-align: center;
+}
+
+
+label, select *{
+    text-transform: capitalize;
+}
+
+
+label + *{
+    width:40%;
+}
+
+
+[type="button"]{
+    margin-top:3%;
+}
+
+label{
+    margin-top:2%;
 }

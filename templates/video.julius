@@ -19,8 +19,8 @@ $(function() {
   $("##{rawJS videoFormId}").submit(function(event) {
     event.preventDefault();
 
-    var name = $("##{rawJS videoNameTextareaId}").val();
-    var url = $("##{rawJS videoUrlTextareaId}").val();
+    var name = $("#name").val();
+    var url = $("#url").val();
     if (!name || !url) {
       alert("Please fill out the form fields first.");
       return;
@@ -41,6 +41,7 @@ $(function() {
         
         console.log(data);
         $("##{rawJS videoListId}").append(newListElement);
+        location.reload(true);
       },
       error: function (data) {
         console.log("Error creating video recommendation: " + JSON.stringify(data));
@@ -48,11 +49,6 @@ $(function() {
     });
 
   });
-
-
-
-
-
- 
-
 });
+
+

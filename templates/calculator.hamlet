@@ -12,27 +12,23 @@ $doctype 5
                 <h1> elo calculator
             <div>
                 <form #calculatorForm aria-label="Fill the calculator params">
-                    <label for="league">
-                        League
+                    <label for="league">league
                     <select #league title="Select your actual league">
-                        <option value="bronze">Bronze</option>
-                        <option value="silver">Silver</option>
-                        <option value="gold">Gold</option>
-                        <option value="platinum">Platinum</option>
-                        <option value="diamond">Diamond</option>
-                        <option value="master">Master</option>
-                        <option value="challenger">Challenger</option>
+                        <option value="bronze">bronze</option>
+                        <option value="silver">silver</option>
+                        <option value="gold">gold</option>
+                        <option value="platinum">platinum</option>
+                        <option value="diamond">diamond</option>
+                        <option value="master">master</option>
+                        <option value="challenger">challenger</option>
 
-                    <label for="division">
-                        Division
+                    <label for="division">division
                     <input #division type="number" name="Division" min="1" max="5" required>
 
-                    <label for="victories">
-                        Ranked victories
+                    <label for="victories">ranked victories
                     <input #victories type="number" name="Won" required>
 
-                    <label for="defeats">
-                        Division
+                    <label for="defeats">ranked defeats
                     <input #defeats type="number" name="Defeated" required>
                 
                 

@@ -9,8 +9,29 @@ section{
     height: 670px;
 }
 
-h1, h2, h3{
+h1, h2, h3, label, a{
     color:white;
+}
+a{
+    font-size: 12pt;
+}
+
+a:hover{
+    font-weight:700;
+    color:white;
+    text-decoration: none;
+}
+
+section .flex-container :last-child ul{
+    padding:0;
+}
+
+
+section .flex-container :last-child ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
 }
 
 h1{
@@ -41,8 +62,11 @@ input{
 }
 
 .flex-container div{
-    background-color: blue;
+    background-color: #1E90FF;
     padding: 2%;
+    border-radius: 2%;
+    border: 1px solid black;
+    
 }
 
 body{
@@ -68,6 +92,9 @@ form * {
 
 form [type="submit"]{
     background-color:red;
+    color:black;
+    border-color: #8B0000;
+
 }
 
 

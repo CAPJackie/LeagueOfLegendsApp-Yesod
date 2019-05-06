@@ -16,10 +16,10 @@ $doctype 5
                     <h3> add recommendation
                     <form ##{videoFormId} aria-label="Fill recommendation params">
                         <label for="name">Name</label>
-                        <input type="text" #name required title="Enter the name of the video">
+                        <input type="text" #name title="Enter the name of the video" required>
 
                         <label for="url">Url</label>
-                        <input type="url" #url required title="Enter the url of the video">
+                        <input type="url" #url title="Enter the url of the video" required>
 
                         <input type="submit" #submit-button value="Submit" title="Click this button after you've filled out the form elements">
                 <div>
@@ -29,7 +29,7 @@ $doctype 5
                             <li>
                                 <a href=#{videoUrl $ entityVal video}>
                                     #{videoName $ entityVal video}
-                                <form action="@{VideoRemovalR (entityKey video)}" method="post">
+                                <form #deleteForm action="@{VideoRemovalR (entityKey video)}" method="post">
                                     <input type="submit" name="upvote" value="Delete" />
         <footer>
             This is the footer section
