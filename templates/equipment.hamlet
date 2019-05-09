@@ -10,7 +10,9 @@ $doctype 5
                      <th> Name
                      <th> Cost
                      <th> Sell Price
+                     <th> Passive Effect
                      <th> Active Effect
+                     <th> Aura Effect
                      <th>
               $forall Entity equipmentId obj <- allobj
                 <tbody>
@@ -18,4 +20,16 @@ $doctype 5
                           <td> #{equipmentName obj}
                           <td> #{equipmentCost obj}
                           <td> #{equipmentSell obj}
+                          $maybe equipmentPassive <- equipmentPassive obj
+                            <td> #{equipmentPassive}
+                          $nothing
+                            <td> 
+                          $maybe equipmentActive <- equipmentActive obj
+                            <td> #{equipmentActive}
+                          $nothing
+                            <td> 
+                          $maybe equipmentAura <- equipmentAura obj
+                            <td> #{equipmentAura}
+                          $nothing
+                            <td> 
                           <td> <form action="@{DeleteEquipmentR equipmentId}" method="post"><input type="submit" value="Borrar" />

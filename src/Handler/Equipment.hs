@@ -21,12 +21,17 @@ getEquipmentR = do
 -- Create
 objectForm :: Maybe Equipment -> AForm Handler Equipment
 objectForm equipment = Equipment
-                        <$> areq textField "Name" (equipmentName <$> equipment)
-                        <*> areq textField "Cost" (equipmentCost <$> equipment)
-                        <*> areq textField "Sell Price" (equipmentSell <$> equipment)
+                        <$> areq strField "Name" (equipmentName <$> equipment)
+                        <*> areq costField "Cost" (equipmentCost <$> equipment)
+                        <*> areq sellField "Sell Price" (equipmentSell <$> equipment)
                         <*> aopt textField "Passive" (equipmentPassive <$> equipment)
                         <*> aopt textField "Active" (equipmentActive <$> equipment)
                         <*> aopt textField "Aura" (equipmentAura <$> equipment)
+                        where
+                          errorMessageInt :: Text
+                          errorMessageInt = "This need a value!"
+                          costField = checkBool (/= "0") errorMessageInt textField
+                          sellField = checkBool (/= "0") errorMessageInt textField
 
 getNewEquipmentR ::  Handler Html
 getNewEquipmentR = do
