@@ -48,3 +48,11 @@ Equipment json
     passive Text Maybe
     active Text Maybe
     aura Text Maybe
+
+Profile 
+    user Text
+    name Text
+    email Text
+    age Int
+    country Text
+    deriving Show
