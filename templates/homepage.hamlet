@@ -28,3 +28,6 @@
         <div .row>
             <form action="/calculator">
                 <input type="submit" value="Elo Calculator" .btn .btn-danger />
+        <div .row>
+            <form action="/ipcalculator">
+                <input type="submit" value="Ip Calculator" .btn .btn-danger />

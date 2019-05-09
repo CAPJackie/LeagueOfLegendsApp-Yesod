@@ -1,0 +1,19 @@
+$doctype 5
+<html>
+
+<head>
+    <title>
+
+<body>
+    <table #ChampTable .table .table-responsive .table-hover>
+        <thead>
+            <th> Name
+            <th hidden=true> Price
+            <th> Check
+        $forall Entity championId champion <- champions 
+            <tbody>
+                <tr> 
+                    <td> #{championIdName champion}
+                    <td hidden=true> #{championPrice champion}
+                    <td> <input type="checkbox" onclick="ipAmount();">
+    <p #CalculatorResponse align="center"> Please check one or more to give you an estimated value

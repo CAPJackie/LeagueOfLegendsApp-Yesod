@@ -40,3 +40,5 @@
 -- /calculator/result/league/#Text/division/#Int/wins/#Int/loses/#Int CalculatorResultR GET
 
 /calculator/result/league/#Text/division/#Int/wins/#Int/loses/#Int CalculatorResultR GET
+
+/ipcalculator IpCalculatorR GET 

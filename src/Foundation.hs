@@ -180,6 +180,8 @@ instance Yesod App where
     isAuthorized (DeleteEquipmentR _) _ = authorizedForPrivileges [PrvRegisteredUser]
     isAuthorized CalculatorR _ = authorizedForPrivileges [PrvRegisteredUser]
     isAuthorized (CalculatorResultR _ _ _ _) _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized IpCalculatorR _ = authorizedForPrivileges [PrvRegisteredUser]
+    
 
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function

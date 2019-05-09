@@ -1,0 +1,11 @@
+function ipAmount(){
+    table = document.getElementById('ChampTable');
+    rows = table.getElementsByTagName('tr');
+    sum=0;
+    for(i=1;i<rows.length;i++){
+        if(rows[i].children[2].children[0].checked){
+            sum+=parseInt(rows[i].children[1].innerText);
+        }
+    }
+    document.getElementById('CalculatorResponse').innerText = (sum==0)?"Please check one or more to give you an estimated value":"You have to use "+sum+" IP to buy that champions";
+}
