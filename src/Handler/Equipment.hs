@@ -21,7 +21,7 @@ getEquipmentR = do
 -- Create
 objectForm :: Maybe Equipment -> AForm Handler Equipment
 objectForm equipment = Equipment
-                        <$> areq strField "Name" (equipmentName <$> equipment)
+                        <$> areq textField "Name" (equipmentName <$> equipment)
                         <*> areq costField "Cost" (equipmentCost <$> equipment)
                         <*> areq sellField "Sell Price" (equipmentSell <$> equipment)
                         <*> aopt textField "Passive" (equipmentPassive <$> equipment)
