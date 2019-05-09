@@ -22,8 +22,13 @@ championForm   champion = Champion
                         <*> areq textField "Regeneracion de vida" (championRegenerationlife <$> champion)
                         <*> areq textField "Armadura" (championArmor <$> champion)
                         <*> areq textField "Resistencia Magica" (championMagicresistence <$> champion)
-                        <*> areq textField "Rol" (championRol <$> champion)
-
+                        <*> areq (selectFieldList rols) "Rol" (championRol <$> champion)
+                        <*> areq (selectFieldList prices) "Precio" (championPrice <$> champion)
+                        where
+                         prices :: [(Text,Int)]
+                         prices = [("450",450),("1350",1350),("3150",3150),("4800",4800),("6300",6300),("7800",7800)]
+                         rols :: [(Text,Text)]
+                         rols = [("Asesino","Asesino"),("Mago","Mago"),("Soporte","Soporte"),("Tirador","Tirador"),("Tanque","Tanque"),("Luchador","Luchador")]
 
 --CRUD
 --Create

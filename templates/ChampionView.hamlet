@@ -16,44 +16,33 @@ $else
                      <th> Armadura
                      <th> Resistencia Magica
                      <th> Rol
+                     <th> Precio
                      <th>
-
-
         $forall Entity championId champion <- champions
-
             <tbody>
                 <tr>
                     <td>
                         #{championIdName champion}
-
                     <td>
                         #{championDescription champion}
-
                     <td>
                         #{championLife champion}
-
                     <td>
                         #{championAttackdamage champion}
-
                     <td>
                         #{championAttackspeed champion}
-
-
                     <td>
                         #{championSpeed champion}
-
                     <td>
                         #{championRegenerationlife champion}
-
                     <td>
                         #{championArmor champion}
-
                     <td>
                         #{championMagicresistence champion}
-
                     <td>
                         #{championRol champion}
-
+                    <td> 
+                        #{championPrice champion}
                     <td>
                           <form action="@{ChampionDeleteR championId}" method="post">
                                                      <input type="submit" name="upvote" value="Borrar" />
