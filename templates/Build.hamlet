@@ -1,0 +1,5 @@
+<body>
+    <form method=post action=@{actionR} encType=#{encoding}>
+          <h1> Agregar una build
+          ^{widget}
+          <button href=@{BuildNewR} .btn .btn-default> Adicionar

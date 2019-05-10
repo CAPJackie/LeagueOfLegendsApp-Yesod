@@ -41,4 +41,18 @@
 
 /calculator/result/league/#Text/division/#Int/wins/#Int/loses/#Int CalculatorResultR GET
 
-/ipcalculator IpCalculatorR GET 
+/ipcalculator IpCalculatorR GET
+
+/buildslol BuildNewR GET POST
+
+/buildslist BuildListR GET
+
+/buildslist/#BuildsId BuildDeleteR POST
+
+/buildEdit/#BuildsId BuildEditR GET POST
+
+/buildSearch BuildSearchR  GET POST
+
+/buildsJson  BuildsJsonR GET POST
+
+/buildJson/#BuildsId  BuildJsonR  GET PUT DELETE

@@ -1,4 +1,5 @@
-<form method=post action=@{actionR} encType=#{encoding}>
-      <h1> Agregar un Campeon
-      ^{widget}
-      <button href=@{ChampionNewR} .btn .btn-default> Adicionar
+<body>
+    <form method=post action=@{actionR} encType=#{encoding}>
+          <h1> Agregar un Campeon
+          ^{widget}
+          <button href=@{ChampionNewR} .btn .btn-default> Adicionar

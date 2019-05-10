@@ -181,7 +181,13 @@ instance Yesod App where
     isAuthorized CalculatorR _ = authorizedForPrivileges [PrvRegisteredUser]
     isAuthorized (CalculatorResultR _ _ _ _) _ = authorizedForPrivileges [PrvRegisteredUser]
     isAuthorized IpCalculatorR _ = authorizedForPrivileges [PrvRegisteredUser]
-    
+    isAuthorized BuildNewR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized BuildListR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (BuildDeleteR _) _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (BuildEditR _) _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized BuildSearchR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized BuildsJsonR _ = authorizedForPrivileges [PrvRegisteredUser]
+    isAuthorized (BuildJsonR _) _ = authorizedForPrivileges [PrvRegisteredUser]
 
     -- the profile route requires that the user is authenticated, so we
     -- delegate to that function

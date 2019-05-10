@@ -31,3 +31,15 @@
         <div .row>
             <form action="/ipcalculator">
                 <input type="submit" value="Ip Calculator" .btn .btn-danger />
+
+        <div .row>
+            <form action="/buildslol">
+                <input type="submit" value="Builds Creator" .btn .btn-danger />
+
+        <div .row>
+            <form action="/buildslist">
+                <input type="submit" value="Builds List" .btn .btn-danger />
+
+        <div .row>
+            <form action="/buildSearch">
+                <input type="submit" value="Search Builds" .btn .btn-danger />

@@ -1,0 +1,81 @@
+<div>
+
+<h1> Builds
+$if null builds
+    <p> No hay builds ingresadas
+$else
+    <table .table .table-responsive .table-hover>
+        <thead>
+                     <th> Nombre
+                     <th> Nombre del Campeon
+                     <th> Linea
+                     <th> Runa A
+                     <th> Runa B
+                     <th> Opcional A
+                     <th> Opcional B
+                     <th> Opcional C
+                     <th> Item 1
+                     <th> Item 2
+                     <th> Item 3
+                     <th> Item 4
+                     <th> Item 5
+                     <th> Item 6
+                     <th> Q
+                     <th> W
+                     <th> E
+                     <th> R
+                     <th> Descripcion de la Build
+                     <th>
+                     <th>
+
+        $forall Entity buildsId build <- builds
+            <tbody>
+                <tr>
+                    <td>
+                        #{buildsName build}
+                    <td>
+                        #{buildsChampionName build}
+                    <td>
+                        #{buildsLine build}
+                    <td>
+                        #{buildsFirstrune build}
+                    <td>
+                        #{buildsSecondrune build}
+                    <td>
+                        #{buildsFirstoption build}
+                    <td>
+                        #{buildsSecondoption build}
+                    <td>
+                        #{buildsThirdoption build}
+                    <td>
+                        #{buildsItemone build}
+                    <td>
+                        #{buildsItemtwo build}
+                    <td>
+                        #{buildsItemthree build}
+                    <td>
+                        #{buildsItemfour build}
+                    <td>
+                        #{buildsItemfive build}
+                    <td>
+                        #{buildsItemsix build}
+                    <td>
+                        #{buildsAbilityq build}
+                    <td>
+                        #{buildsAbilityw build}
+                    <td>
+                        #{buildsAbilitye build}
+                    <td>
+                        #{buildsAbilityr build}
+                    <td>
+                        #{buildsDescription build}
+
+                    <td>
+                          <form action="@{BuildDeleteR buildsId}" method="post">
+                                                     <input type="submit" name="upvote" value="Borrar" />
+
+                    <td>
+                          <a href=@{BuildEditR buildsId} .btn .btn-warning .pull-right>
+                              <span .glyphicon .glyphicon-edit>
+                              Editar
+

@@ -56,3 +56,25 @@ Profile
     age Int
     country Text
     deriving Show
+
+Builds
+    name Text
+    championName Text
+    line Text
+    firstrune Text
+    secondrune Text
+    firstoption Text
+    secondoption Text
+    thirdoption Text
+    itemone Text
+    itemtwo Text
+    itemthree Text
+    itemfour Text
+    itemfive Text
+    itemsix Text
+    abilityq Text
+    abilityw Text
+    abilitye Text
+    abilityr Text
+    description Text
+
